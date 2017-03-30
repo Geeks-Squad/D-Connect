@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="20dp"
+
+    android:orientation="vertical"
+
+    tools:context="com.india.gov.helperapp.UserAuthentication">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@android:drawable/btn_star_big_on"
+        android:layout_gravity="center_horizontal"
+        />
+
+    <TextView
+        android:layout_marginTop="35dp"
+        android:layout_width="match_parent"
+        android:padding="20dp"
+        android:layout_height="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
+        android:text="Do you want to SignUp or Login ?"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        />
+
+    <Button
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
+        android:text="SignUp"
+        android:onClick="SignUp"
+        />
+
+    <Button
+        android:layout_marginTop="35dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:background="#50398c"
+        android:textColor="@color/cardview_light_background"
+        android:layout_height="wrap_content"
+        android:text="Login"
+        android:onClick="Login"
+        />
+</LinearLayout>
