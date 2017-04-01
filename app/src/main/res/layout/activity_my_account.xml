@@ -7,26 +7,12 @@
     android:layout_height="match_parent"
     tools:context="com.india.gov.helperapp.MyAccountActivity">
 
-    <ImageView
-        android:layout_width="80dp"
-        android:layout_height="80dp"
-        android:id="@+id/accimg"
-        android:src="@mipmap/ic_launcher"
-        android:layout_centerHorizontal="true"/>
     <TextView
         android:id="@+id/accname"
         android:textSize="20dp"
-        android:layout_below="@+id/accimg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="My Name is AccountName"
         android:layout_centerHorizontal="true"/>
 
-    <TextView
-        android:id="@+id/emailid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/accname"
-        android:layout_centerHorizontal="true"
-        android:text="My Email ID is username@example.com" />
 </RelativeLayout>

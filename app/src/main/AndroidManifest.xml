@@ -36,6 +36,8 @@
         <activity
             android:name=".RecommendationsActivity"
             android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity"
+            android:parentActivityName=".UpdateListActivity"/>
         <activity android:name=".SplashScreenActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
