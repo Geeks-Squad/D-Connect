@@ -13,7 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-import com.india.gov.helperapp.service.LoginTask;
+import com.india.gov.helperapp.tasks.LoginTask;
 
 import butterknife.ButterKnife;
 import butterknife.Bind;

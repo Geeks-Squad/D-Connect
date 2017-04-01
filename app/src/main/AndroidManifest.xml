@@ -47,6 +47,10 @@
             </intent-filter>
 
         </activity>
+        <service
+            android:name=".NotifPullService"
+            android:exported="false"/>
+
     </application>
 
 </manifest>
