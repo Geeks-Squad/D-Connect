@@ -8,11 +8,107 @@
     tools:context="com.india.gov.helperapp.MyAccountActivity">
 
     <TextView
-        android:id="@+id/accname"
-        android:textSize="20dp"
+        android:id="@+id/hard_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="My Name is AccountName"
-        android:layout_centerHorizontal="true"/>
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="45dp"
+        android:text="Name:" />
 
+    <TextView
+        android:id="@+id/hard_DoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hard_name"
+        android:layout_below="@+id/hard_name"
+        android:layout_marginTop="45dp"
+        android:text="DoB:" />
+
+    <TextView
+        android:id="@+id/hard_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hard_DoB"
+        android:layout_below="@+id/hard_DoB"
+        android:layout_marginTop="45dp"
+        android:text="Address:" />
+
+    <TextView
+        android:id="@+id/hard_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hard_address"
+        android:layout_below="@+id/hard_address"
+        android:layout_marginTop="45dp"
+        android:text="Phone no:" />
+
+    <TextView
+        android:id="@+id/hard_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hard_phone"
+        android:layout_below="@+id/hard_phone"
+        android:layout_marginTop="45dp"
+        android:text="Center chosen:" />
+
+    <TextView
+        android:id="@+id/myacc_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="TextView"
+        android:layout_alignBaseline="@+id/hard_name"
+        android:layout_alignBottom="@+id/hard_name"
+        android:layout_toEndOf="@+id/hard_center" />
+
+    <TextView
+        android:id="@+id/myacc_DoB"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myacc_name"
+        android:layout_alignTop="@+id/hard_DoB"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/myacc_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myacc_DoB"
+        android:layout_alignTop="@+id/hard_address"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/myacc_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myacc_address"
+        android:layout_alignTop="@+id/hard_phone"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/myacc_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myacc_phone"
+        android:layout_alignTop="@+id/hard_center"
+        android:text="TextView" />
+
+    <TextView
+        android:id="@+id/hard_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/hard_center"
+        android:layout_below="@+id/hard_center"
+        android:layout_marginTop="42dp"
+        android:text="Status:" />
+
+    <TextView
+        android:id="@+id/myacc_status"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/myacc_center"
+        android:layout_alignTop="@+id/hard_status"
+        android:text="TextView" />
 </RelativeLayout>
