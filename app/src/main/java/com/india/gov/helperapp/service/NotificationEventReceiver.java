@@ -38,11 +38,12 @@ public class NotificationEventReceiver extends WakefulBroadcastReceiver {
             serviceIntent = NotifPullService.createIntentStartNotificationService(context);
         } else if (ACTION_DELETE_NOTIFICATION.equals(action)) {
             Log.i(getClass().getSimpleName(), "onReceive delete notification action, starting notification service to handle delete");
-            serviceIntent = NotificationIntentService.createIntentDeleteNotification(context);
-        }
+            serviceIntent = NotifPullService.createIntentDeleteNotification(context);
 
-        if (serviceIntent != null) {
-            startWakefulService(context, serviceIntent);
+
+            if (serviceIntent != null) {
+                startWakefulService(context, serviceIntent);
+            }
         }
     }
 
