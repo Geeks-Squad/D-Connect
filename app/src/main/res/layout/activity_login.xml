@@ -12,7 +12,6 @@
         android:paddingLeft="24dp"
         android:paddingRight="24dp">
 
-
         <!--  Email Label -->
         <TextView
             android:layout_width="match_parent"

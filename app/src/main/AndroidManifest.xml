@@ -20,7 +20,6 @@
         <activity android:name=".UserAuthentication" />
         <activity android:name=".SkillSetActivity" />
         <activity android:name=".SignupActivity" />
-        <activity android:name=".OTPActivity" />
         <activity
             android:name=".UpdateListActivity"
             android:theme="@style/AppTheme.NoActionBar" />
