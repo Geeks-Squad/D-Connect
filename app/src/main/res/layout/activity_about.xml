@@ -6,10 +6,4 @@
     android:layout_height="match_parent"
     tools:context="com.india.gov.helperapp.AboutActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="About the devs and App version"
-        android:textSize="25dp"
-        android:layout_centerInParent="true"/>
 </RelativeLayout>
