@@ -5,6 +5,7 @@ import android.app.DownloadManager;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.icu.text.DateFormat;
 import android.os.AsyncTask;
 import android.util.Base64;
@@ -48,10 +49,10 @@ public class LoginTask extends AsyncTask<Void, Void, Boolean> {
     protected Boolean doInBackground(Void... params) {
         OkHttpClient okHttpClient = new OkHttpClient();
         Response response;
-        String url = "Blank";
+        String url = "http://172.104.51.13:8080/candidate/id/";
         Request request = new Request.Builder()
-                .url(url)
-                .addHeader("Authorization","Basic "+ Base64.encodeToString((aadhar+":"+password).getBytes(),Base64.DEFAULT))
+                .url(url+aadhar)
+                .addHeader("Skip","yes")/*Base64.encodeToString((aadhar+":"+password).getBytes(),Base64.DEFAULT))*/
                 .build();
         try {
             response = okHttpClient.newCall(request).execute();

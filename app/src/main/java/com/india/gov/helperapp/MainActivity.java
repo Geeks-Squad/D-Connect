@@ -1,6 +1,8 @@
 package com.india.gov.helperapp;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.NavigationView;
@@ -16,6 +18,8 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.india.gov.helperapp.service.MyAccountTask;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -90,8 +94,11 @@ public class MainActivity extends AppCompatActivity
 
 
         if (id == R.id.nav_my_acc) {
-            Intent myaccintent = new Intent(getApplicationContext(),MyAccountActivity.class);
-            startActivity(myaccintent);
+            SharedPreferences prefs = getSharedPreferences("IDPass", Context.MODE_PRIVATE);
+            String lname = prefs.getString("aadhar",null);
+            String lpass = prefs.getString("aadhar_pass",null);
+            MyAccountTask myAccountTask = new MyAccountTask(lname,lpass,this);
+            myAccountTask.execute();
         } else if (id == R.id.nav_dashboard) {
             Intent dashintent = new Intent(getApplicationContext(),UpdateListActivity.class);
             startActivity(dashintent);
@@ -106,11 +113,9 @@ public class MainActivity extends AppCompatActivity
             shareintent.setType("Text/html");
             shareintent.putExtra(Intent.EXTRA_TEXT, "The Playstore Link to this app is: @playstore");
             startActivity(Intent.createChooser(shareintent,"Share using"));
-        } else if (id == R.id.nav_settings) {
-            Intent settingsintent = new Intent(this,SettingsActivity.class);
-            startActivity(settingsintent);
         } else if (id == R.id.nav_about) {
-
+            Intent aboutintent = new Intent(getApplicationContext(),AboutActivity.class);
+            startActivity(aboutintent);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

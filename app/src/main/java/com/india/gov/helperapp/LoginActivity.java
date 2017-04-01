@@ -1,5 +1,7 @@
 package com.india.gov.helperapp;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
@@ -23,8 +25,8 @@ import butterknife.Bind;
 public class LoginActivity extends AppCompatActivity {
     private static final String TAG = "LoginActivity";
     private static final int REQUEST_SIGNUP = 0;
-
-    @Bind(R.id.input_username) EditText _usernameText;
+    SharedPreferences sharedPref;
+    @Bind(R.id.input_aadharno) EditText _aadharnoText;
     @Bind(R.id.input_password) EditText _passwordText;
     @Bind(R.id.btn_login) Button _loginButton;
     @Bind(R.id.link_signup) TextView _signupLink;
@@ -53,21 +55,25 @@ public class LoginActivity extends AppCompatActivity {
                 finish();
             }
         });
+        sharedPref = this.getSharedPreferences("IDPass",Context.MODE_PRIVATE);
     }
 
     public void login() {
         Log.d(TAG, "Login");
 
-        if (!validate()) {
+    /*    if (!validate()) {
             onLoginFailed();
             return;
-        }
+        }*/
 
         _loginButton.setEnabled(false);
 
-        String username = _usernameText.getText().toString();
+        String username = _aadharnoText.getText().toString();
         String password = _passwordText.getText().toString();
-
+        SharedPreferences.Editor editor = sharedPref.edit();
+        editor.putString("aadhar",username);
+        editor.putString("aadhar_pass",password);
+        editor.commit();
         LoginTask loginTask = new LoginTask(username,password,getApplicationContext(),this);
         loginTask.execute();
         _loginButton.setEnabled(true);
@@ -89,7 +95,7 @@ public class LoginActivity extends AppCompatActivity {
         String password = _passwordText.getText().toString();
 
         if (password.isEmpty() || password.length() < 4 || password.length() > 10) {
-            _passwordText.setError("between 4 and 10 alphanumeric characters");
+            _passwordText.setError("Your password should be 4 to 10 alphanumeric characters long");
             valid = false;
         } else {
             _passwordText.setError(null);
